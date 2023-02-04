@@ -33,7 +33,7 @@ contract Whitelist is Ownable {
     public
     onlyOwner
   {
-    require(whitelistedMap[_address] != false);
+    require(whitelistedMap[_address] != false, "wallet not whitelisted!");
     whitelistedMap[_address] = false;
     emit Whitelisted(_address, false);
   }
